@@ -63,10 +63,19 @@
 
     <!-- Day 1 Content -->
     <section id="day1" class="tab-content block space-y-4">
-      <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded shadow-sm text-sm text-amber-900 flex items-center justify-between">
-        <div>
-          <p class="font-bold"><i class="fa-solid fa-sun mr-1 text-amber-500"></i> 當日日落時間：18:48</p>
-          <p class="text-xs text-amber-700 mt-0.5">搭乘城巴 H2K 落日飛車建議提前至 17:30-17:45 至中環 7 號碼頭排隊。</p>
+      <!-- 天氣與注意事項提示區 -->
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded shadow-sm text-sm text-amber-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="space-y-1">
+          <p class="font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-sun-rain text-amber-500 text-base"></i> 天氣預測：多雲局部陣雨 ｜ 27°C – 32°C (體感約 36°C)
+          </p>
+          <p class="text-xs text-amber-800">
+            <i class="fa-solid fa-umbrella text-amber-600 mr-1"></i> 氣候悶熱，午後有局部驟雨機率 (40%)，建議隨身攜帶折疊傘與補充水分。
+          </p>
+        </div>
+        <div class="sm:text-right border-t sm:border-t-0 pt-2 sm:pt-0 border-amber-200/60 shrink-0">
+          <p class="font-bold text-xs"><i class="fa-solid fa-sun mr-1 text-amber-500"></i> 日落：18:48</p>
+          <p class="text-[11px] text-amber-700 mt-0.5">搭 H2K 建議 17:30 前往中環 7 號碼頭</p>
         </div>
       </div>
 
@@ -150,9 +159,17 @@
 
     <!-- Day 2 Content -->
     <section id="day2" class="tab-content hidden space-y-4">
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded shadow-sm text-sm text-blue-900">
-        <p class="font-bold"><i class="fa-solid fa-route mr-1 text-blue-600"></i> 行程動線優化版</p>
-        <p class="text-xs text-blue-700 mt-0.5">先直奔彩虹邨避開拍照人潮 ➔ 黃大仙 ➔ 南山邨 ➔ 太子美食與購物 ➔ 太平山頂夜景。</p>
+      <!-- 天氣與注意事項提示區 -->
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded shadow-sm text-sm text-blue-900 space-y-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <p class="font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-sun text-amber-500 text-base"></i> 天氣預測：多雲短暫晴朗 ｜ 28°C – 33°C (體感約 37°C)
+          </p>
+          <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-medium w-max">適合山頂看夜景</span>
+        </div>
+        <p class="text-xs text-blue-700">
+          <i class="fa-solid fa-temperature-arrow-up text-blue-600 mr-1"></i> 全天體感溫度偏高，戶外打卡（彩虹邨/南山邨）請注意防曬降溫；晚間山頂風大體感舒適。
+        </p>
       </div>
 
       <div class="space-y-4">
@@ -235,9 +252,17 @@
 
     <!-- Day 3 Content -->
     <section id="day3" class="tab-content hidden space-y-4">
-      <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded shadow-sm text-sm text-rose-900">
-        <p class="font-bold"><i class="fa-solid fa-weight-hanging mr-1 text-rose-600"></i> 行李與買物限制提醒</p>
-        <p class="text-xs text-rose-700 mt-0.5">香港快運「輕便飛」限 1 件隨身背包 (7kg)。於 Bakehouse 買蛋撻請留足背包空間整併！</p>
+      <!-- 天氣與注意事項提示區 -->
+      <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded shadow-sm text-sm text-rose-900 space-y-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <p class="font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-showers-heavy text-rose-500 text-base"></i> 天氣預測：多雲午後狂賀驟雨 ｜ 27°C – 31°C
+          </p>
+          <span class="text-xs bg-rose-100 text-rose-800 px-2 py-0.5 rounded font-medium w-max">留意昂坪纜車營運</span>
+        </div>
+        <p class="text-xs text-rose-700">
+          <i class="fa-solid fa-wind text-rose-600 mr-1"></i> 大嶼山昂坪海拔高，如遇雷雨或強風纜車可能暫停營運，備案可改搭大嶼山巴士 23 號前往天壇大佛。
+        </p>
       </div>
 
       <div class="space-y-4">
