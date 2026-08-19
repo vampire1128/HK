@@ -10,29 +10,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     .tab-active {
-      border-bottom: 3px solid #3b82f6;
-      color: #1d4ed8;
+      border-bottom: 3px solid #2563eb;
+      color: #2563eb;
       font-weight: bold;
+    }
+    .img-card {
+      transition: transform 0.3s ease, shadow 0.3s ease;
+    }
+    .img-card:hover {
+      transform: translateY(-2px);
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal">
+<body class="bg-slate-100 text-slate-800 font-sans leading-normal tracking-normal pb-12">
 
-  <!-- Header Section -->
-  <header class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
-    <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+  <!-- Header Banner Section with Background Image -->
+  <header class="relative bg-slate-900 text-white shadow-lg">
+    <div class="absolute inset-0 overflow-hidden opacity-40">
+      <img src="https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=1200&q=80" alt="Hong Kong Skyline" class="w-full h-full object-cover">
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 py-8 flex justify-between items-end">
       <div>
-        <h1 class="text-2xl font-bold flex items-center gap-2">
-          <i class="fa-solid font-plane-departure"></i> 香港自由行 3D2N
+        <span class="bg-blue-600 text-white text-xs px-2.5 py-1 rounded-full font-semibold uppercase tracking-wider">2026/08/24 – 08/26</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold mt-2 flex items-center gap-2">
+          🇭🇰 香港自由行 3D2N
         </h1>
-        <p class="text-xs text-blue-100 mt-1">2026/08/24 – 2026/08/26 | 香港快運 UO193 / UO182</p>
+        <p class="text-xs md:text-sm text-slate-200 mt-1">香港快運 UO193 / UO182 ｜ 輕便飛 (隨身背囊 7kg)</p>
       </div>
-      <span class="bg-blue-800 text-xs px-2.5 py-1 rounded-full text-blue-200">輕便飛 (背囊 7kg)</span>
     </div>
 
     <!-- Navigation Tabs -->
-    <div class="bg-white border-b border-gray-200 shadow-inner">
-      <div class="max-w-4xl mx-auto flex overflow-x-auto text-sm text-gray-600">
+    <div class="relative bg-white/95 backdrop-blur border-b border-slate-200 text-slate-700 shadow-md">
+      <div class="max-w-4xl mx-auto flex overflow-x-auto text-sm">
         <button onclick="switchTab('day1')" id="tab-day1" class="flex-1 py-3 px-4 text-center whitespace-nowrap hover:text-blue-600 focus:outline-none tab-active">
           <i class="fa-solid fa-calendar-day mr-1"></i> Day 1 (8/24)
         </button>
@@ -43,7 +52,7 @@
           <i class="fa-solid fa-calendar-day mr-1"></i> Day 3 (8/26)
         </button>
         <button onclick="switchTab('flight')" id="tab-flight" class="flex-1 py-3 px-4 text-center whitespace-nowrap hover:text-blue-600 focus:outline-none">
-          <i class="fa-solid fa-suitcase-rolling mr-1"></i> 飛航與注意事項
+          <i class="fa-solid fa-suitcase-rolling mr-1"></i> 須知與備忘
         </button>
       </div>
     </div>
@@ -54,88 +63,85 @@
 
     <!-- Day 1 Content -->
     <section id="day1" class="tab-content block space-y-4">
-      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded shadow-sm text-sm text-yellow-800">
-        <p class="font-bold"><i class="fa-solid fa-sun mr-1"></i> 當日日落時間：18:48</p>
-        <p>搭乘城巴 H2K 落日飛車建議提前至 17:30-17:45 至中環 7 號碼頭排隊。</p>
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded shadow-sm text-sm text-amber-900 flex items-center justify-between">
+        <div>
+          <p class="font-bold"><i class="fa-solid fa-sun mr-1 text-amber-500"></i> 當日日落時間：18:48</p>
+          <p class="text-xs text-amber-700 mt-0.5">搭乘城巴 H2K 落日飛車建議提前至 17:30-17:45 至中環 7 號碼頭排隊。</p>
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-200 divide-y divide-gray-100">
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">08:00</span>
+      <div class="space-y-4">
+        <!-- Item Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Airport">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">預約叫車前往 RMQ</h3>
-              <p class="text-xs text-gray-500">預計 08:30 抵達清泉崗機場，開通 eSIM</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">TWD $200</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">10:25 - 12:10</span>
-            <div>
-              <h3 class="font-bold text-gray-800">香港快運 UO193 (RMQ ➔ HKG T1)</h3>
-              <p class="text-xs text-gray-500">12:40 - 13:00 辦理入境，順路拍 T2 抵港層「旅途上的喵」</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">08:00 - 12:10</span>
+                <span class="text-xs font-medium text-slate-500">TWD $200 (叫車)</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">前往 RMQ ➔ 搭乘 UO193 抵達香港</h3>
+              <p class="text-xs text-slate-500 mt-1">08:30 抵達清泉崗機場、開通 eSIM ｜ 10:25 起飛 ➔ 12:10 抵達 HKG T1 ｜ 拍 T1 抵港層「旅途上的喵」</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">13:10 - 14:00</span>
+        <!-- Item Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Hotel & Bus">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">前往尖沙咀君怡酒店 Check-in</h3>
-              <p class="text-xs text-gray-500">可選機場快綫至香港站或直達機場巴士 A21（金巴利道站下）</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">A21: HK$34.6</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">14:30 - 17:15</span>
-            <div>
-              <h3 class="font-bold text-gray-800">中環半山扶手電梯與懷舊街區</h3>
-              <p class="text-xs text-gray-500">蘭芳園（現金）、泰昌餅家、嘉咸街壁畫，可彈性排入元創方/大館/文武廟吹冷氣</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">13:10 - 14:00</span>
+                <span class="text-xs font-medium text-slate-500">A21: HK$34.6</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">前往尖沙咀君怡酒店 Check-in</h3>
+              <p class="text-xs text-slate-500 mt-1">直達機場巴士 A21（金巴利道，彌敦道站下車，約 50-60 分鐘）；若下雨直接搭 A21 進飯店。</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">17:45 - 19:30</span>
+        <!-- Item Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Central Street">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">觀光城巴 H2K（落日飛車）</h3>
-              <p class="text-xs text-gray-500">中環 7 號碼頭排隊，18:15–18:30 發車，尖沙咀天星碼頭下車</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">HK$47.6</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">20:00</span>
-            <div>
-              <h3 class="font-bold text-gray-800">幻彩詠香江 (每天 10 分鐘)</h3>
-              <p class="text-xs text-gray-500">尖沙咀海濱長廊觀看 (每日 15:00 公布是否暫停)</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">14:30 - 17:15</span>
+                <span class="text-xs font-medium text-slate-500">現金 / Apple Pay</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">中環半山扶手電梯 ➔ 懷舊街區散策</h3>
+              <p class="text-xs text-slate-500 mt-1">蘭芳園（中環總店）、泰昌餅家蛋撻、嘉咸街壁畫。太熱可彈性排入元創方 (PMQ) / 大館吹冷氣。</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">21:00</span>
+        <!-- Item Card 4 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Open Bus">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">晚餐：榕哥陳皮燒鵝</h3>
-              <p class="text-xs text-gray-500">營業時間至 00:00；備案宵夜：Dough Bros. Pizza / 快樂蜂</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">17:45 - 19:30</span>
+                <span class="text-xs font-medium text-slate-500">Apple Pay: HK$47.6</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">觀光城巴 H2K（落日飛車夜遊）</h3>
+              <p class="text-xs text-slate-500 mt-1">中環 7 號碼頭排隊，18:15–18:30 發車。車程約 45-90 分鐘，於尖沙咀天星碼頭或梳士巴利道下車。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item Card 5 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Victoria Harbour">
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">20:00 - 21:00</span>
+                <span class="text-xs font-medium text-slate-500">免費觀賞</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">幻彩詠香江 ➔ 晚餐：榕哥陳皮燒鵝</h3>
+              <p class="text-xs text-slate-500 mt-1">20:00 尖沙咀海濱燈光秀（10 分鐘）➔ 21:00 榕哥陳皮燒鵝（營業至 00:00）</p>
             </div>
           </div>
         </div>
@@ -144,66 +150,83 @@
 
     <!-- Day 2 Content -->
     <section id="day2" class="tab-content hidden space-y-4">
-      <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded shadow-sm text-sm text-blue-800">
-        <p class="font-bold"><i class="fa-solid fa-circle-info mr-1"></i> 行程動線優化建議</p>
-        <p>建議先直奔彩虹邨避開拍照人潮，拍完後再前往黃大仙與南山邨，最後回到太子享用點心與逛街。</p>
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded shadow-sm text-sm text-blue-900">
+        <p class="font-bold"><i class="fa-solid fa-route mr-1 text-blue-600"></i> 行程動線優化版</p>
+        <p class="text-xs text-blue-700 mt-0.5">先直奔彩虹邨避開拍照人潮 ➔ 黃大仙 ➔ 南山邨 ➔ 太子美食與購物 ➔ 太平山頂夜景。</p>
       </div>
 
-      <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-200 divide-y divide-gray-100">
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">08:00 - 09:30</span>
+      <div class="space-y-4">
+        <!-- Item Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Choi Hung Estate">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">早餐 ➔ 彩虹邨拍照</h3>
-              <p class="text-xs text-gray-500">於尖沙咀或彩虹邨內「鑽石冰室」早餐，前往彩虹邨籃球場打卡</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">港鐵: HK$7.5</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">10:00 - 12:00</span>
-            <div>
-              <h3 class="font-bold text-gray-800">黃大仙祠 ➔ 南山邨</h3>
-              <p class="text-xs text-gray-500">港鐵至黃大仙參拜，再轉至石硤尾站 B2 出口步行至南山邨打卡</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">港鐵: HK$11</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">12:30 - 16:00</span>
-            <div>
-              <h3 class="font-bold text-gray-800">太子 / 旺角美食漫遊與逛街</h3>
-              <p class="text-xs text-gray-500">美食：金華冰廳 / 一點心 / 得閒飲茶 / 廖同合荳品廠 / 佳佳甜品<br>景點：花墟道、金魚街、波鞋街、女人街、天橋攝影點</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">08:00 - 09:30</span>
+                <span class="text-xs font-medium text-slate-500">港鐵: HK$7.5</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">尖沙咀早餐 ➔ 彩虹邨打卡</h3>
+              <p class="text-xs text-slate-500 mt-1">尖沙咀享用早餐（或彩虹邨鑽石冰室），搭港鐵至彩虹邨 C4 出口，拍攝清晨無人籃球場空景。</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">17:30 - 19:30</span>
+        <!-- Item Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Temple">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">中環太平山頂纜車 + 摩天台 428</h3>
-              <p class="text-xs text-gray-500">建議提早購票。最佳景觀座位：上山坐右側、下山坐左側</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">10:00 - 12:00</span>
+                <span class="text-xs font-medium text-slate-500">港鐵: HK$11</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">黃大仙祠 ➔ 南山邨</h3>
+              <p class="text-xs text-slate-500 mt-1">港鐵黃大仙站參拜 ➔ 石硤尾站 B2 出口步行 3 分鐘至南山邨拍攝經典懷舊綠色天井。</p>
             </div>
           </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">套票約 HK$200-300</span>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">20:00 - 21:30</span>
+        <!-- Item Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Hong Kong Food">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">城巴 15 號下山 ➔ 天星小輪回尖沙咀</h3>
-              <p class="text-xs text-gray-500">搭乘城巴 15 號直達中環 7 號碼頭 (HK$13)，轉乘天星小輪返回尖沙咀 (HK$5)</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">12:30 - 16:00</span>
+                <span class="text-xs font-medium text-slate-500">現金 / 刷卡</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">太子 / 旺角美食吃吃喝喝與購物</h3>
+              <p class="text-xs text-slate-500 mt-1">美食：金華冰廳、一點心、得閒飲茶、佳佳甜品、生記粥店 ｜ 景點：花墟道、金魚街、波鞋街、女人街、天橋攝影點。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item Card 4 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Peak Tram">
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">17:30 - 19:30</span>
+                <span class="text-xs font-medium text-slate-500">預先線上買票</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">中環山頂纜車 + 凌霄閣摩天台 428</h3>
+              <p class="text-xs text-slate-500 mt-1">最佳景觀座位：上山坐右側、下山坐左側。欣賞維多利亞港夕陽與世界級夜景。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item Card 5 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Star Ferry">
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">20:00 - 21:30</span>
+                <span class="text-xs font-medium text-slate-500">HK$18 (總交通)</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">城巴 15 號下山 ➔ 天星小輪回尖沙咀</h3>
+              <p class="text-xs text-slate-500 mt-1">城巴 15 號直達中環 7 號碼頭 (HK$13)，轉乘天星小輪過海回尖沙咀 (HK$5)，夜遊維港步道。</p>
             </div>
           </div>
         </div>
@@ -212,65 +235,68 @@
 
     <!-- Day 3 Content -->
     <section id="day3" class="tab-content hidden space-y-4">
-      <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded shadow-sm text-sm text-red-800">
-        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 手提行李限制提醒</p>
-        <p>「輕便飛」方案僅限 1 件隨身背包 (40x25x20cm, 7kg)。於 Bakehouse 採購後需可整併放入背包中。</p>
+      <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded shadow-sm text-sm text-rose-900">
+        <p class="font-bold"><i class="fa-solid fa-weight-hanging mr-1 text-rose-600"></i> 行李與買物限制提醒</p>
+        <p class="text-xs text-rose-700 mt-0.5">香港快運「輕便飛」限 1 件隨身背包 (7kg)。於 Bakehouse 買蛋撻請留足背包空間整併！</p>
       </div>
 
-      <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-200 divide-y divide-gray-100">
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">08:30</span>
+      <div class="space-y-4">
+        <!-- Item Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Breakfast">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">早餐：澳洲牛奶公司 (佐敦)</h3>
-              <p class="text-xs text-gray-500">退房寄放行李後前往，推薦炒蛋多士與蛋白燉鮮牛奶</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">08:30 - 09:30</span>
+                <span class="text-xs font-medium text-slate-500">佐敦站</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">早餐：澳洲牛奶公司</h3>
+              <p class="text-xs text-slate-500 mt-1">飯店辦理退房寄放行李 ➔ 澳洲牛奶公司（推薦炒蛋多士、光速餐、蛋白燉鮮牛奶）。</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">10:00 - 12:30</span>
+        <!-- Item Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Tian Tan Buddha">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">昂坪 360 纜車 ➔ 天壇大佛</h3>
-              <p class="text-xs text-gray-500">搭乘港鐵至東涌站，纜車單程約 25 分鐘，參觀天壇大佛與與佛同行</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">預先購票</span>
-        </div>
-
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">12:30 - 14:30</span>
-            <div>
-              <h3 class="font-bold text-gray-800">東涌 Outlet 採購與午餐</h3>
-              <p class="text-xs text-gray-500">享用 Shake Shack，採購 Bakehouse 東涌店蛋撻</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">10:00 - 12:30</span>
+                <span class="text-xs font-medium text-slate-500">預先購票</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">昂坪 360 纜車 ➔ 天壇大佛</h3>
+              <p class="text-xs text-slate-500 mt-1">港鐵至東涌站，搭乘昂坪纜車（約 25 分鐘），參觀天壇大佛、昂坪市集與與佛同行。</p>
             </div>
           </div>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">14:50 - 15:30</span>
+        <!-- Item Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="Egg Tart">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">搭乘 S1 巴士直達機場 T1</h3>
-              <p class="text-xs text-gray-500">東涌巴士站搭車，車程約 15 分鐘，15:30 前抵達辦理出境</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">12:30 - 14:30</span>
+                <span class="text-xs font-medium text-slate-500">東涌 Outlet</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">午餐：Shake Shack ➔ Bakehouse 東涌店</h3>
+              <p class="text-xs text-slate-500 mt-1">東涌名店城 Outlet 享用 Shake Shack 漢堡，並購買 Bakehouse 熱門蛋撻作為伴手禮。</p>
             </div>
           </div>
-          <span class="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded self-start md:self-auto">HK$3.7</span>
         </div>
 
-        <!-- Item -->
-        <div class="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <div class="flex items-start gap-3">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mt-0.5">16:40 - 18:15</span>
+        <!-- Item Card 4 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col sm:flex-row img-card">
+          <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=400&q=80" class="sm:w-36 h-32 sm:h-auto object-cover" alt="HK Airport">
+          <div class="p-4 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-bold text-gray-800">Sky Bridge 天際走廊 ➔ 登機返台</h3>
-              <p class="text-xs text-gray-500">T1 3-22 登機口附近觀景，17:45 關閉登機，香港快運 UO182 返抵 RMQ</p>
+              <div class="flex justify-between items-start">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">14:50 - 19:55</span>
+                <span class="text-xs font-medium text-slate-500">S1 巴士: HK$3.7</span>
+              </div>
+              <h3 class="font-bold text-slate-800 text-base mt-1">S1 巴士前往機場 T1 ➔ UO182 返台</h3>
+              <p class="text-xs text-slate-500 mt-1">15:30 抵達 T1 辦理出境 ➔ 16:40 T1 Sky Bridge 天際走廊觀景 ➔ 18:15 起飛 ➔ 19:55 返抵 RMQ。</p>
             </div>
           </div>
         </div>
@@ -280,30 +306,47 @@
     <!-- Flight & Notes Content -->
     <section id="flight" class="tab-content hidden space-y-6">
       <!-- Flight Rules -->
-      <div class="bg-white rounded-lg shadow-sm p-5 border border-gray-200">
-        <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2 flex items-center gap-2">
+      <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-800 mb-3 border-b pb-2 flex items-center gap-2">
           <i class="fa-solid fa-plane text-blue-600"></i> 香港快運 輕便飛規範
         </h2>
-        <ul class="text-sm space-y-2 text-gray-700">
-          <li>• <strong>隨身背包限制：</strong> 40 x 25 x 20 公分、限重 7 公斤，<strong>禁用頭頂行李櫃</strong>（需置於座位下方）。</li>
-          <li>• <strong>關閉時間：</strong> 起飛前 75 分鐘關閉自助櫃檯 / 60 分鐘關閉報到櫃檯 / 30 分鐘關閉登機閘口。</li>
+        <ul class="text-sm space-y-2 text-slate-700">
+          <li>• <strong>隨身背包限制：</strong> 40 x 25 x 20 公分、限重 7 公斤，<strong>禁用頭頂行李櫃</strong>。</li>
+          <li>• <strong>時間限制：</strong> 起飛前 75 分鐘關閉自助櫃檯 / 60 分鐘關閉報到櫃檯 / 30 分鐘關閉登機閘口。</li>
           <li>• <strong>液體限制：</strong> 單件 &lt; 100ml，總量 &lt; 1L，須裝入透明密封袋。</li>
-          <li>• <strong>絕對禁帶：</strong> 港澳法律嚴禁攜帶電子煙、加熱菸、純煙草製品及防身噴霧（辣椒水）。</li>
+          <li>• <strong>禁帶物品：</strong> 港澳法律嚴禁攜帶電子煙、加熱菸、純煙草製品及防身噴霧（辣椒水）。</li>
         </ul>
       </div>
 
-      <!-- Prep Checklist -->
-      <div class="bg-white rounded-lg shadow-sm p-5 border border-gray-200">
-        <h2 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2 flex items-center gap-2">
-          <i class="fa-solid fa-clipboard-check text-green-600"></i> 出發前待辦清單
+      <!-- Option Food & Backup -->
+      <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-800 mb-3 border-b pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-umbrella text-blue-600"></i> 宵夜與雨備選項
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> 護照 (效期 6 個月以上)</label>
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> 香港入境登記 (線上填寫並列印紙本)</label>
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> 旅遊不便險 (國泰/富邦/安達)</label>
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> eSIM / 開通漫遊</label>
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> 港幣現金 (建議 HK$500-1000 小額)</label>
-          <label class="flex items-center gap-2 bg-gray-50 p-2 rounded"><input type="checkbox" class="rounded text-blue-600"> 八達通 / Apple Pay 設定</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">🌙 尖沙咀宵夜選項</h3>
+            <p class="text-slate-600 text-xs">Dough Bros. Pizza & Doughnuts (可線上預訂)<br>快樂蜂 Jollibee (加拿分道店)</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-800 mb-1">☔ 雨備室內景點</h3>
+            <p class="text-slate-600 text-xs">K11 MUSEA / 香港藝術館<br>M+ 視覺文化博物館 / 香港故宮文化博物館</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prep Checklist -->
+      <div class="bg-white rounded-xl shadow-sm p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-800 mb-3 border-b pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-clipboard-check text-emerald-600"></i> 出發前檢查清單
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-sm">
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> 護照 (效期 6 個月以上)</label>
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> 香港入境登記紙本列印</label>
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> 旅遊不便險</label>
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> eSIM / 海外漫遊設定</label>
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> 港幣現金 (小額零錢備用)</label>
+          <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 cursor-pointer"><input type="checkbox" class="rounded text-blue-600"> 八達通 / Apple Pay 設定</label>
         </div>
       </div>
     </section>
@@ -312,16 +355,12 @@
 
   <script>
     function switchTab(tabId) {
-      // Hide all contents
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-      // Show selected content
       document.getElementById(tabId).classList.remove('hidden');
 
-      // Reset tab button states
       document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
         btn.classList.remove('tab-active');
       });
-      // Set active tab button
       document.getElementById('tab-' + tabId).classList.add('tab-active');
     }
   </script>
